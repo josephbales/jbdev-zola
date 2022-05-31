@@ -25,4 +25,5 @@ jobs:
         ls -al main
         ls -al deployment
         git version
+        cd main
         git log -p -1
