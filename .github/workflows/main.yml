@@ -25,9 +25,10 @@ jobs:
     - run: |
         git config --global user.email "hello@jbales.dev"
         git config --global user.name "Joseph Bales"
-        ls -al deployment
         find "deployment" | grep -v "^deployment/\.git" | grep -v "^deployment$" | xargs rm -rf
-        ls -al deployment
+        cp -r "code/.github/deployment"/* "deployment"
         sudo snap install --edge zola
-        cd main
+        cd code
         zola build
+        cp -r "public"/* "../deployment"
+        echo "Deploying build based on ${git rev-parse --short HEAD}"
