@@ -10,6 +10,18 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v3
+    - name: Checkout code repo
+      uses: actions/checkout@v3
       with:
         submodules: true
+        path: main
+    - name: Checkout deployment repo
+      uses: actions/checkout@v3
+      with:
+        repository: josephbales/jbales.dev
+        token: ${{ secrets.JBALES_DEV_TOKEN }}
+        path: deployment
+    - run: |
+        ls -al main
+        ls -al deployment
+        git version
