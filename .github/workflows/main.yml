@@ -26,3 +26,4 @@ jobs:
         ls -al deployment
         git version
         ls -al
+        snap version
