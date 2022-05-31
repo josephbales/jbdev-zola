@@ -33,5 +33,7 @@ jobs:
         cp -r "public"/* "../deployment"
         current_commit=$(git rev-parse --short HEAD)
         deployment_message="Deploying build based on ${current_commit}"
+        cd ../deployment
         git add .
         git diff-index --quiet HEAD || git commit --message "$deployment_message"
+        git push origin --set-upstream main
