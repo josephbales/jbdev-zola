@@ -25,5 +25,4 @@ jobs:
         ls -al main
         ls -al deployment
         git version
-        cd main
         ls -al
