@@ -28,6 +28,6 @@ jobs:
         ls -al deployment
         find "deployment" | grep -v "^deployment/\.git" | grep -v "^deployment$" | xargs rm -rf
         ls -al deployment
-        snap install --edge zola
+        sudo snap install --edge zola
         cd main
         zola build
