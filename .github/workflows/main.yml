@@ -25,3 +25,4 @@ jobs:
         ls -al main
         ls -al deployment
         git version
+        git log -p -1
