@@ -31,4 +31,5 @@ jobs:
         cd code
         zola build
         cp -r "public"/* "../deployment"
-        echo "Deploying build based on ${git rev-parse --short HEAD}"
+        current_commit=$(git rev-parse --short HEAD)
+        echo "Deploying build based on ${current_commit}"
